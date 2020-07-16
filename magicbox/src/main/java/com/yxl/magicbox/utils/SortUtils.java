@@ -8,6 +8,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * 对list进行排序
+ */
 public class SortUtils {
 
     /**

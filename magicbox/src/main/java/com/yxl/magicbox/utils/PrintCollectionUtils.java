@@ -5,6 +5,9 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 
+/**
+ * 打印Collections类型
+ */
 public class PrintCollectionUtils {
     //TODO 此处应写成泛型
     public static void print(List list) {
