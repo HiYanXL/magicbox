@@ -1,0 +1,7 @@
+*.DS_Store
+magicbox/.mvn/
+magicbox/mvnw
+magicbox/mvnw.cmd
+
+
+.idea
