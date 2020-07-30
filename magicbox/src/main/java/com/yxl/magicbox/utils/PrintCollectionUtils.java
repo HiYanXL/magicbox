@@ -3,7 +3,9 @@ package com.yxl.magicbox.utils;
 import com.alibaba.fastjson.JSON;
 import org.springframework.util.CollectionUtils;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 打印Collections类型
@@ -11,7 +13,7 @@ import java.util.*;
 public class PrintCollectionUtils {
     //TODO 此处应写成泛型
     public static void print(List list) {
-        if (!CollectionUtils.isEmpty(list)) {
+        if (com.alibaba.dubbo.common.utils.CollectionUtils.isNotEmpty(list)) {
             Iterator iterator = list.iterator();
             while (iterator.hasNext())
                 System.out.println(iterator.next());

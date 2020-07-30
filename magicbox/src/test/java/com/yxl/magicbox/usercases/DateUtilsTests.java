@@ -10,6 +10,29 @@ import java.util.Date;
 
 public class DateUtilsTests extends MagicboxApplicationTests {
     @Test
+    public void testGetPeriod(){
+
+        String str1="20200229";
+        String str2="20380228";
+        System.out.println(DateUtils.getPeriod(str1,str2));
+
+        PrintSeparatorUtils.print();
+
+    }
+    @Test
+    public void testGetBetweenDays(){
+        String str1="20200229";
+        String str2="20380228";
+        long days = DateUtils.getBetweenDays(str1,str2);
+        System.out.println(days);
+        System.out.println(DateUtils.daysLater(DateUtils.str2Date(str1),Integer.parseInt(String.valueOf(days))));
+
+    }
+    @Test
+    public void testGetCurrentTime(){
+        System.out.println(DateUtils.getCurrentTime());
+    }
+    @Test
     public void testStr2Date(){
         String str = "20201201";
         System.out.println(DateUtils.str2Date(str));
@@ -27,7 +50,7 @@ public class DateUtilsTests extends MagicboxApplicationTests {
         c.setTime(date);
         int count = 18;
         c.add(Calendar.DATE,-count);
-        System.out.println(DateUtils.daysBeforeNow(date,count).compareTo(c.getTime()));
+        System.out.println(DateUtils.daysBefore(date,count).compareTo(c.getTime()));
 
 
     }
@@ -38,13 +61,13 @@ public class DateUtilsTests extends MagicboxApplicationTests {
         c.setTime(date);
         int count = -1;
         c.add(Calendar.DATE,count);
-        System.out.println(DateUtils.daysAfterNow(date,count).compareTo(c.getTime()));
-        System.out.println(DateUtils.daysAfterNow(date,count));
+        System.out.println(DateUtils.daysLater(date,count).compareTo(c.getTime()));
+        System.out.println(DateUtils.daysLater(date,count));
         PrintSeparatorUtils.print();
         for(int i=-1000;i<1000;i++){
             c.setTime(date);
             c.add(Calendar.DATE,i);
-            int b=DateUtils.daysAfterNow(date,i).compareTo(c.getTime());
+            int b=DateUtils.daysLater(date,i).compareTo(c.getTime());
             if(b!=0){
                 System.out.println(b);
             }
@@ -61,13 +84,13 @@ public class DateUtilsTests extends MagicboxApplicationTests {
         c.setTime(date);
         int count = -1;
         c.add(Calendar.MONTH,count);
-        System.out.println(DateUtils.monthsAfterNow(date,count).compareTo(c.getTime()));
-        System.out.println(DateUtils.monthsAfterNow(date,count));
+        System.out.println(DateUtils.monthsLater(date,count).compareTo(c.getTime()));
+        System.out.println(DateUtils.monthsLater(date,count));
         PrintSeparatorUtils.print();
         for(int i=-100;i<100;i++){
             c.setTime(date);
             c.add(Calendar.MONTH,i);
-            int b=DateUtils.monthsAfterNow(date,i).compareTo(c.getTime());
+            int b=DateUtils.monthsLater(date,i).compareTo(c.getTime());
             if(b!=0){
                 System.out.println(b);
             }
@@ -77,13 +100,13 @@ public class DateUtilsTests extends MagicboxApplicationTests {
     @Test
     public void testMonthsBeforeNow(){
         Date date = new Date();
-        System.out.println(DateUtils.monthsBeforeNow(date,-18));
-        System.out.println(DateUtils.monthsBeforeNow(date,-1));
-        System.out.println(DateUtils.monthsBeforeNow(date,0));
-        System.out.println(DateUtils.monthsBeforeNow(date,3));
-        System.out.println(DateUtils.monthsBeforeNow(date,6));
-        System.out.println(DateUtils.monthsBeforeNow(date,12));
-        System.out.println(DateUtils.monthsBeforeNow(date,18));
+        System.out.println(DateUtils.monthsBefore(date,-18));
+        System.out.println(DateUtils.monthsBefore(date,-1));
+        System.out.println(DateUtils.monthsBefore(date,0));
+        System.out.println(DateUtils.monthsBefore(date,3));
+        System.out.println(DateUtils.monthsBefore(date,6));
+        System.out.println(DateUtils.monthsBefore(date,12));
+        System.out.println(DateUtils.monthsBefore(date,18));
 
     }
     @Test
@@ -93,7 +116,7 @@ public class DateUtilsTests extends MagicboxApplicationTests {
         c.setTime(date);
         int count = 18;
         c.add(Calendar.YEAR,-count);
-        System.out.println(DateUtils.yearsBeforeNow(date,count).compareTo(c.getTime()));
+        System.out.println(DateUtils.yearsBefore(date,count).compareTo(c.getTime()));
 
 
     }
@@ -104,13 +127,13 @@ public class DateUtilsTests extends MagicboxApplicationTests {
         c.setTime(date);
         int count = -18;
         c.add(Calendar.YEAR,count);
-        System.out.println(DateUtils.yearsAfterNow(date,count).compareTo(c.getTime()));
-        System.out.println(DateUtils.yearsAfterNow(date,count));
+        System.out.println(DateUtils.yearsLater(date,count).compareTo(c.getTime()));
+        System.out.println(DateUtils.yearsLater(date,count));
         PrintSeparatorUtils.print();
         for(int i=-100;i<100;i++){
             c.setTime(date);
             c.add(Calendar.MONTH,i);
-            int b=DateUtils.monthsAfterNow(date,i).compareTo(c.getTime());
+            int b=DateUtils.monthsLater(date,i).compareTo(c.getTime());
             if(b!=0){
                 System.out.println(b);
             }
