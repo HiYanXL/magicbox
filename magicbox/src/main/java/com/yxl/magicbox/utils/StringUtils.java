@@ -12,6 +12,11 @@ import java.util.regex.Pattern;
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
+    /**
+     * 是否为单个英文小写字母
+     * @param str
+     * @return
+     */
     public static boolean isSingleLowerLetter(String str) {
         if (str != null) {
             return Pattern.matches(RegexPattern.StringPattern.SingleLowerLetter, str);
@@ -19,6 +24,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         return false;
     }
 
+    /**
+     * 是否为单个英文大写字母
+     * @param str
+     * @return
+     */
     public static boolean isSingleUpperLetter(String str) {
         if (str != null) {
             return Pattern.matches(RegexPattern.StringPattern.SingleUpperLetter, str);
@@ -26,13 +36,23 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         return false;
     }
 
+    /**
+     * 是否为单个英文字母
+     * @param str
+     * @return
+     */
     public static boolean isSingleLetter(String str) {
 
         return isSingleLowerLetter(str) || isSingleUpperLetter(str);
-        
+
     }
 
 
+    /**
+     * 将全大写下划线分隔的字符串转为小驼峰
+     * @param str
+     * @return
+     */
     public static String dealUnderscore(String str) {
         if (StringUtils.isNotEmpty(str) && str.indexOf("_") != -1) {
             String[] strings = str.toLowerCase().split("_");
@@ -46,6 +66,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         return str;
     }
 
+    /**
+     * 首字母大写
+     * @param str
+     * @return
+     */
     public static String firstCharUpper(String str) {
         if (StringUtils.isEmpty(str)) {
             //TODO log
@@ -54,6 +79,11 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
+    /**
+     * 首字母小写
+     * @param str
+     * @return
+     */
     public static String firstCharLower(String str) {
         if (StringUtils.isEmpty(str)) {
             //TODO log
