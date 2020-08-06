@@ -27,10 +27,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     }
 
     public static boolean isSingleLetter(String str) {
-        if (str != null) {
-            return isSingleLowerLetter(str) || isSingleUpperLetter(str);
-        }
-        return false;
+
+        return isSingleLowerLetter(str) || isSingleUpperLetter(str);
+        
     }
 
 
