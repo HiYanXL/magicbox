@@ -2,6 +2,17 @@ package com.yxl.magicbox.constants;
 
 public class RegexPattern {
 
+    public static class StringPattern {
+        /**
+         * 单小写字母
+         */
+        public static final String SingleLowerLetter = "^[a-z]$";
+        /**
+         * 单大写字母
+         */
+        public static final String SingleUpperLetter = "^[A-Z]$";
+    }
+
     public static class DatePattern {
         /**
          * 日期格式 yyyyMMdd
