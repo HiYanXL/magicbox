@@ -3,7 +3,7 @@ package com.yxl.magicbox.exceptions;
 /**
  * 定义一个运行时异常、用于抛出异常、异常详情、异常原因
  */
-public class YRunTimeException extends RuntimeException{
+public class YRuntimeException extends RuntimeException{
     private static final long serialVersionUID = 1L;
     private Object[] args;
     private String detail;
@@ -20,17 +20,17 @@ public class YRunTimeException extends RuntimeException{
         this.detail = detail;
     }
 
-    public YRunTimeException(String message){
+    public YRuntimeException(String message){
         super(message);
     }
-    public YRunTimeException(String message,Throwable cause){
+    public YRuntimeException(String message, Throwable cause){
         super(message, cause);
     }
-    public YRunTimeException(String message,Throwable cause,Object[] args){
+    public YRuntimeException(String message, Throwable cause, Object[] args){
         super(message, cause);
         this.args = args;
     }
-    public YRunTimeException(String message,Object[] args){
+    public YRuntimeException(String message, Object[] args){
         super(message);
         this.args = args;
     }

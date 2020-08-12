@@ -1,6 +1,6 @@
 package com.yxl.magicbox.utils;
 
-import com.yxl.magicbox.exceptions.YRunTimeException;
+import com.yxl.magicbox.exceptions.YRuntimeException;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -139,7 +139,7 @@ public class DateUtils {
                 e.printStackTrace();
             }
         } else {
-            throw new YRunTimeException("此字符串不能转为" + Date.class + "类型");
+            throw new YRuntimeException("此字符串不能转为" + Date.class + "类型");
         }
         return null;
     }
@@ -163,7 +163,7 @@ public class DateUtils {
                 e.printStackTrace();
             }
         } else {
-            throw new YRunTimeException("err");
+            throw new YRuntimeException("err");
         }
         return null;
     }
@@ -181,7 +181,7 @@ public class DateUtils {
      */
     public static long getBetweenDays(String str1, String str2) {
         if (!isDate(str1) || !isDate(str2)) {
-            throw new YRunTimeException("date error");
+            throw new YRuntimeException("date error");
         }
         Date date1 = str2Date(str1);
         Date date2 = str2Date(str2);
@@ -208,7 +208,7 @@ public class DateUtils {
      */
     public static Period getPeriod(String str1, String str2) {
         if (!isDate(str1) || !isDate(str2)) {
-            throw new YRunTimeException("date error");
+            throw new YRuntimeException("date error");
         }
         Period period = Period.between(LocalDate.parse(str1, DateTimeFormatter.ofPattern("yyyyMMdd")), LocalDate.parse(str2, DateTimeFormatter.ofPattern("yyyyMMdd")));
         return period;

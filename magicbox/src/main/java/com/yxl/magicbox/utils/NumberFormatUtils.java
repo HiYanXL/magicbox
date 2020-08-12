@@ -12,24 +12,29 @@ public class NumberFormatUtils {
     /**
      * 对数字进行格式化
      * 先判断str是否为Numeric
+     *
      * @param str
      * @return
      */
     public static String format(String str) {
-        return format(str,true);
+        return format(str, true);
     }
 
     /**
      * 对数字进行格式化
+     *
      * @param str
-     * @param b 默认true,对str格式化之前先判断是否为Numeric；若为false,直接格式化str,对于0.或者.0这些值也能格式化
+     * @param b   默认true,对str格式化之前先判断是否为Numeric；若为false,直接格式化str,对于0.或者.0或者.这些值也能格式化
      * @return
      */
-    public static String format(@NotNull String str,boolean b) {
-        if(b){
+    public static String format(@NotNull String str, boolean b) {
+        if (b) {
             if (isNotNumber(str)) {
                 return null;
             }
+        }
+        if (".".equals(str)) {
+            str = "0";
         }
         DecimalFormat decimalFormat = new DecimalFormat(defaultPattern);
         try {

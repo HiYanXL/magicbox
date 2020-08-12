@@ -2,6 +2,7 @@ package com.yxl.magicbox.utils;
 
 import com.yxl.magicbox.constants.RegexPattern;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -11,6 +12,30 @@ import java.util.regex.Pattern;
  * 基于org.apache.commons.lang3.StringUtils
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
+
+    public static String Obj2String(Object object) {
+        Class cls = object.getClass();
+        Field[] fields = cls.getDeclaredFields();
+        StringBuffer sb = new StringBuffer(object.toString()).append(" ");
+        for (int i = 0; i < fields.length; i++) {
+            try {
+                Field field = fields[i];
+                field.setAccessible(true);
+                String name = field.getName();
+                Object value = field.get(object);
+                sb.append(name).append(":").append(value);
+                if (i < fields.length - 1) {
+                    sb.append(",");
+                } else {
+                    sb.append(".");
+                }
+
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return sb.toString();
+    }
 
     /**
      * 是否为单个英文小写字母
