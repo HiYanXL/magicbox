@@ -45,7 +45,11 @@ public class NumberFormatUtils {
         }
     }
 
-
+    /**
+     * 判断字符串是否可转为数字
+     * @param number
+     * @return 可转为数字，即可成为new BigDecimal()的参数
+     */
     public static boolean isNumber(@NotNull String number) {
         if (number == null) {
             return false;
