@@ -1,7 +1,5 @@
 package com.yxl.magicbox.utils;
 
-import org.apache.commons.lang3.StringUtils;
-
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
