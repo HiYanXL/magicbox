@@ -18,8 +18,14 @@ public class PrintSeparatorUtils {
      */
     private static final String defaultSeparator = "-";
 
+
+    public static String get32Dash() {
+        return montage(defaultLength, defaultSeparator);
+    }
+
     /**
      * 根据输入的字符串和字符串个数拼接分割线
+     *
      * @param num
      * @param str
      * @return
@@ -33,22 +39,27 @@ public class PrintSeparatorUtils {
         }
         return sb.toString();
     }
+
     /**
      * 根据输入的字符串和字符串个数打印分割线
+     *
      * @param num
      * @param str
      */
     public static void print(int num, String str) {
         System.out.println(montage(num, str));
     }
+
     /**
      * 打印默认分割线
      */
     public static void print() {
         print(defaultLength, defaultSeparator);
     }
+
     /**
      * 根据输入的字符串个数打印分割线
+     *
      * @param num
      */
     public static void print(int num) {
@@ -57,6 +68,7 @@ public class PrintSeparatorUtils {
 
     /**
      * 根据输入的字符串打印分割线
+     *
      * @param str
      */
     public static void print(String str) {

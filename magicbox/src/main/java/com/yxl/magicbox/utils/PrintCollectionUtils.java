@@ -20,7 +20,7 @@ public class PrintCollectionUtils {
         }
     }
     //TODO 此处应写成泛型
-    public static void print(Map<Object,Object> map) {
+    public static void print(Map map) {
         if (!CollectionUtils.isEmpty(map)) {
             //使用alibaba的fastjson包
             System.out.println(JSON.toJSONString(map));
