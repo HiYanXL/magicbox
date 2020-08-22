@@ -58,7 +58,7 @@ public class DateUtils {
         return RegexCheckUtils.checkDate3(str);
     }
 
-    public static Date calculate(Date date, int count, int field) {
+    private static Date calculate(Date date, int count, int field) {
         boolean b;
         switch (field) {
             case Calendar.YEAR:
