@@ -1,6 +1,7 @@
 package com.yxl.magicbox.usercases;
 
 import com.yxl.magicbox.MagicboxApplicationTests;
+import com.yxl.magicbox.utils.DateUtils;
 import com.yxl.magicbox.utils.NumberFormatUtils;
 import com.yxl.magicbox.utils.PrintSeparatorUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -54,6 +55,11 @@ public class NumberFormatUtilsTests extends MagicboxApplicationTests {
 
         PrintSeparatorUtils.print();
 
+        System.out.println(NumberFormatUtils.format("..",false));
+        System.out.println(NumberFormatUtils.format(".."));
+
+        PrintSeparatorUtils.print();
+
         System.out.println(NumberFormatUtils.format(".0",false));
         System.out.println(NumberFormatUtils.format(".0"));
 
@@ -61,6 +67,14 @@ public class NumberFormatUtilsTests extends MagicboxApplicationTests {
 
         System.out.println(NumberFormatUtils.format(null,false));
         System.out.println(NumberFormatUtils.format(null));
+    }
+
+    @Test
+    public void testStringFormat(){
+        String name = String.format("%s_%d_%d_%s", DateUtils.class,0,1,"hello world");
+        PrintSeparatorUtils.print();
+        System.out.println(name);
+        PrintSeparatorUtils.print();
     }
 
 }

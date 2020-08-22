@@ -31,20 +31,23 @@ public class NumberFormatUtils {
                 return null;
             }
         }
+        // 增加对.的兼容
         if (".".equals(str)) {
             str = "0";
         }
         DecimalFormat decimalFormat = new DecimalFormat(defaultPattern);
         try {
-            return decimalFormat.format(new BigDecimal(str));
+            BigDecimal bigDecimal = new BigDecimal(str);
+            return decimalFormat.format(bigDecimal);
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
+        return null;
     }
 
     /**
      * 判断字符串是否可转为数字
+     *
      * @param number
      * @return 可转为数字，即可成为new BigDecimal()的参数
      */
