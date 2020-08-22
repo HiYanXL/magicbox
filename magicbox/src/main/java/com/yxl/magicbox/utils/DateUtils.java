@@ -16,6 +16,19 @@ import java.util.Date;
 public class DateUtils {
 
     /**
+     *
+     * @param dateStr
+     * @param weeks 大于0，weeks个星期后的日期；小于0，-weeks个星期前的日期
+     * @return
+     */
+    public static Date weeksLater(String dateStr,int weeks){
+        if(isDate(dateStr)){
+            return calculate(str2Date(dateStr),weeks*7,Calendar.DATE);
+        }
+        return null;
+    }
+
+    /**
      * 判断字符串能否转为日期yyyyMMdd
      *
      * @param str

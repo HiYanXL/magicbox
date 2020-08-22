@@ -15,6 +15,27 @@ import java.util.Date;
 public class DateUtilsTests extends MagicboxApplicationTests {
 
     @Test
+    public void testWeeksLater() {
+        String dateStr = "20200801";
+
+        System.out.println(DateUtils.weeksLater(dateStr,0));
+
+        PrintSeparatorUtils.print();
+        System.out.println(DateUtils.weeksLater(dateStr,1));
+        System.out.println(DateUtils.weeksLater(dateStr,2));
+        System.out.println(DateUtils.weeksLater(dateStr,3));
+        System.out.println(DateUtils.weeksLater(dateStr,4));
+        System.out.println(DateUtils.weeksLater(dateStr,5));
+
+        PrintSeparatorUtils.print();
+        System.out.println(DateUtils.weeksLater(dateStr,-1));
+        System.out.println(DateUtils.weeksLater(dateStr,-2));
+        System.out.println(DateUtils.weeksLater(dateStr,-3));
+        System.out.println(DateUtils.weeksLater(dateStr,-4));
+        System.out.println(DateUtils.weeksLater(dateStr,-5));
+    }
+
+    @Test
     public void testSec() {
 
         Date date = new Date();
