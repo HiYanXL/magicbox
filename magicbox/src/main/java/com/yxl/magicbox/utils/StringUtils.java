@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
-    public static String Obj2String(Object object) {
+    public static String obj2String(Object object) {
         Class cls = object.getClass();
         Field[] fields = cls.getDeclaredFields();
         StringBuffer sb = new StringBuffer(object.toString()).append(" ");
